@@ -11,37 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	size_t	dstlen;
-	size_t	srclen;
-	size_t	src_index;
-	size_t	space_for_src;
-
-	dstlen = 0;
-	srclen = 0;
-	while (src[srclen] != '\0')
-	{
-		srclen++;
-	}
-	while (dst[dstlen] != '\0')
-	{
-		dstlen++;
-	}
-	if (dstlen > dstsize)
-		return (dstsize + srclen);
-	space_for_src = dstsize - dstlen - 1;
-	src_index = 0;
-	while (src[src_index] != '\0' && src_index < space_for_src)
-	{
-		dst[dstlen + src_index] = src[src_index];
-		src_index++;
-	}
-	dst[dstlen + src_index] = '\0';
-	return (dstlen + srclen);
-}
-
+/*	AI	*/
 //size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // {
 // 	size_t	remaining_space;
@@ -57,6 +27,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // 	return (strlen(dst) + strlen(src));
 // }
 
+/*	from Github by old HIVE student	*/
 // size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // {
 // 	char	*s;
