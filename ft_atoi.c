@@ -18,7 +18,12 @@ int	ft_atoi(const char *str)
 	int		indx;
 	int		polarity;
 
-	output = 0 - 1; /* for some reason adding '-1' here solves some overflow issue, i really dont get what this atoi wants or is all about.*/
+	output = 0 - 1; 
+	/* for some reason adding '-1' here solves some overflow issue,
+ I really dont get what this atoi wants or is all about.*/
+	/*	Adding '-1' didnt solve the problem of atoi 
+ (it works only for larger numbers but not smaller numbers)	*/
+	/*	Thus, this solution failed.	*/
 	indx = 0;
 	polarity = 1;
 	while (str[indx] == 32 || (str[indx] >= 9 && str[indx] <= 13))
