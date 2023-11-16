@@ -29,6 +29,7 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(*str))
 	{
 		if (nbr > FT_LONG_MAX / 10 || (nbr == FT_LONG_MAX / 10 && *str > '7'))
+			// '*str > 7' is used here as an equivalent of 'str[indx] > FT_LONG_MAX % 10'
 		{
 			if (polarity > 0)
 				return (-1);
