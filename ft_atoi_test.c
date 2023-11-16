@@ -31,11 +31,8 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit(str[indx]))
 	{
-		if (output > (FT_LONG_MAX / 10) && polarity < 0)
-			return (0);
-		else if (output > FT_LONG_MAX / 10 && polarity > 0)
-			return (-1);
-		else if (output == FT_LONG_MAX / 10 && str[indx] > FT_LONG_MAX % 10)
+		if (output > FT_LONG_MAX / 10 
+			|| output == FT_LONG_MAX / 10 && str[indx] > FT_LONG_MAX % 10)
 		{
 			if (polarity > 0)
 				return (-1);
@@ -47,7 +44,7 @@ int	ft_atoi(const char *str)
 	}
 	return ((int) output * polarity);
 }
-
+/*
 #include <stdio.h>
 
 int	main(int ac, char **av)
@@ -61,4 +58,4 @@ int	main(int ac, char **av)
 		printf("mine: %d | org: %d\n", mine, org);
 	}
 	return (0);
-}
+} */
