@@ -69,9 +69,10 @@ static char	**making_substr(char **split_res, char const *s, char c)
 		len = start;
 		while (s[len] != c && s[len] != '\0')
 			len++;
-		split_res[j++] = ft_substr(s, start, (len - start));
+		split_res[j] = ft_substr(s, start, (len - start));
 		if (!split_res[j])
 			return (ft_free_function(split_res));
+		j++;
 		start = len;
 	}
 	split_res[j++] = NULL; // This here is to stopthe array index from going beyond the limit of the array
