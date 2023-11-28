@@ -60,7 +60,7 @@ static char	**making_substr(char **split_res, char const *s, char c)
 
 	start = 0;
 	j = 0;
-	while (s[start] != '\0' && j < ((size_t)ft_substr_poll(s, c)))
+	while (s[start] != '\0' && j < ((size_t)ft_substr_poll(s, c))) // this J<(typecasted) ft_substr_polls is to prevent the array indexing from going over the limit of the array.
 	{
 		while (s[start] == c && s[start] != '\0')
 			start++;
@@ -74,7 +74,7 @@ static char	**making_substr(char **split_res, char const *s, char c)
 			return (ft_free_function(split_res));
 		start = len;
 	}
-	split_res[j++] = NULL;
+	split_res[j++] = NULL; // This here is to stopthe array index from going beyond the limit of the array
 	return (split_res);
 }
 
